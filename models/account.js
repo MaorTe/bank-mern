@@ -11,11 +11,6 @@ const Account = mongoose.model('Account', {
 		type: Number,
 		min: 0,
 		default: 0,
-		// validate(value) {
-		// 	if (value < 0) {
-		// 		throw new Error('must include at least 2 pics');
-		// 	}
-		// },
 	},
 
 	credit: {

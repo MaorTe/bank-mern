@@ -2,9 +2,7 @@ const express = require('express');
 // @ts-ignore
 const router = new express.Router();
 const Account = require('../models/account');
-const {
-	withdraw,
-} = require('../utils/utils');
+const { withdraw } = require('../utils/utils');
 
 //get all accounts ---------------
 router.get('/api/accounts', async (req, res) => {
@@ -107,7 +105,8 @@ router.patch(`/api/accounts/:id1&:id2/transfer`, async (req, res) => {
 				runValidators: true,
 			}
 		);
-		res.send({ account1, account2 });
+		// res.send({ account1, account2 });
+		res.send(account1);
 	} catch (e) {
 		//possible to have server related issue or validation related issue
 		res.status(400).send({ error: 'something went wrong' });
